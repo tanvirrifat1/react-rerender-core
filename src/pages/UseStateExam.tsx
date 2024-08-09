@@ -1,29 +1,49 @@
-import { useState, Dispatch } from "react";
+import React, { useState } from "react";
 
-type ICounter = {
-  counter: number;
-  setCounter: Dispatch<React.SetStateAction<number>>;
-};
+const UseStateExam = () => {
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
 
-const UseStateExam = ({ counter, setCounter }: ICounter) => {
+  const [user, setUser] = useState({ name: "", email: "", password: "" });
+
+  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(user);
+  };
+
   return (
-    <div>
-      <h1 className="text-center my-4">{counter}</h1>
-      <div className="flex justify-center gap-3">
-        <button
-          onClick={() => setCounter(counter + 1)}
-          className="btn w-64 bg-purple-600 text-white rounded-2xl"
-        >
-          increment
-        </button>
+    <div className="flex justify-center text-black">
+      <form onSubmit={handleSubmit}>
+        <div className="grid grid-cols-1 gap-2">
+          <input
+            onChange={(e) => setUser({ ...user, name: e.target.value })}
+            type="text"
+            name="name"
+            id="name"
+            className="border border-black text-black"
+          />
+          <input
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
+            type="email"
+            name="email"
+            id="email"
+            className="border border-black text-black"
+          />
+          <input
+            onChange={(e) => setUser({ ...user, password: e.target.value })}
+            type="password"
+            name="password"
+            id="password"
+            className="border border-black text-black"
+          />
+        </div>
 
-        <button
-          onClick={() => setCounter(0)}
-          className="btn w-64 bg-red-700 text-white rounded-2xl"
-        >
-          reset
-        </button>
-      </div>
+        <div className="flex justify-center my-12">
+          <button type="submit" className="btn bg-teal-800">
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
