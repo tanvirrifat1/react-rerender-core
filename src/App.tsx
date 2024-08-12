@@ -1,9 +1,9 @@
-import UseReducerExam from "./pages/useReducerExam";
+import UseEffectExam from "./pages/UseEffectExam";
 
 const App = () => {
   return (
     <div className="flex justify-center my-48 items-center text-2xl">
-      <UseReducerExam />
+      <UseEffectExam />
     </div>
   );
 };
