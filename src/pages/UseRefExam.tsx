@@ -1,19 +1,27 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 const UseRefExam = () => {
-  const [count, setCount] = useState(0);
-  const myRef = useRef(0);
+  const myRef = useRef<HTMLInputElement | null>(null);
 
-  const increment = () => {
-    myRef.current = myRef.current + 1;
-    setCount(count + 1);
+  useEffect(() => {
+    myRef.current?.focus;
+  }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
   };
 
   return (
     <div>
-      <button onClick={() => increment()} className="btn btn-secondary">
-        {myRef.current}
-      </button>
+      <form onSubmit={handleSubmit}>
+        <input
+          ref={myRef}
+          className="border border-primary"
+          type="text"
+          name="name"
+          id="name"
+        />
+      </form>
     </div>
   );
 };
