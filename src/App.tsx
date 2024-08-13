@@ -2,6 +2,7 @@ import { useContext } from "react";
 import UseRefExam from "./pages/UseRefExam";
 import { ThemeContext, TThemContext } from "./context/ThemeProvider";
 import { MenuItem, MenuList } from "./context/Manu";
+import Profile from "./component/Prifile";
 
 const App = () => {
   const { dark, setDark } = useContext(ThemeContext) as TThemContext;
@@ -12,14 +13,15 @@ const App = () => {
         dark ? "bg-black" : "bg-white"
       }`}
     >
-      <button onClick={() => setDark(!dark)} className="btn btn-primary">
+      {/* <button onClick={() => setDark(!dark)} className="btn btn-primary">
         toggle
-      </button>
+      </button> */}
       {/* <UseRefExam /> */}
-
+      <Profile />
+      {/* 
       <MenuList>
         <MenuItem></MenuItem>
-      </MenuList>
+      </MenuList> */}
     </div>
   );
 };
