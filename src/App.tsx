@@ -3,6 +3,7 @@ import UseRefExam from "./pages/UseRefExam";
 import { ThemeContext, TThemContext } from "./context/ThemeProvider";
 import { MenuItem, MenuList } from "./context/Manu";
 import Profile from "./component/Prifile";
+import UserContainer from "./component/UserContainer";
 
 const App = () => {
   const { dark, setDark } = useContext(ThemeContext) as TThemContext;
@@ -16,12 +17,8 @@ const App = () => {
       {/* <button onClick={() => setDark(!dark)} className="btn btn-primary">
         toggle
       </button> */}
-      {/* <UseRefExam /> */}
-      <Profile />
-      {/* 
-      <MenuList>
-        <MenuItem></MenuItem>
-      </MenuList> */}
+
+      <UserContainer />
     </div>
   );
 };

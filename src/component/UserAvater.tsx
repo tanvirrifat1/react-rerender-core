@@ -1,6 +1,10 @@
 import React from "react";
 
-const UserAvater = ({ imageUrl }) => {
+type IImage = {
+  imageUrl: string;
+};
+
+const UserAvater = ({ imageUrl }: IImage) => {
   return (
     <div className="avatar">
       <div className="w-24 rounded-full">
