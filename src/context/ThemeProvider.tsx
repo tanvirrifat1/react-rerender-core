@@ -4,7 +4,7 @@ type TThemProvider = {
   children: ReactNode;
 };
 
-type TThemContext = {
+export type TThemContext = {
   dark: boolean;
   setDark: React.Dispatch<React.SetStateAction<boolean>>;
 };
