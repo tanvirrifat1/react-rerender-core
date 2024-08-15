@@ -15,7 +15,7 @@ const UserList = ({ isLoading, error, data }: IUser) => {
 
   return (
     <div>
-      {data.map((item: any) => (
+      {data?.map((item: any) => (
         <p key={item.id}>{item.name}</p>
       ))}
     </div>
